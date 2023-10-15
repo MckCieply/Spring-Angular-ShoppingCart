@@ -16,11 +16,9 @@ export class ProductsComponent {
   onSubmit() {
     this.productService.addProduct(this.product).subscribe(
       (response) => {
-        // Handle the successful response
         console.log('Response:', response);
       },
       (error) => {
-        // Handle errors
         console.error('An error occurred:', error);
       }
     );
