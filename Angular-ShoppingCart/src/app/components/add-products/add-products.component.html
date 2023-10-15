@@ -1,0 +1,36 @@
+
+<form (ngSubmit)="onSubmit()">
+  <div class="container-fluid">
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="name"> Name</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text" id="name" [(ngModel)] = "product.name" name="name">
+      </div>
+    </div>
+  <span></span><br>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="price"> Price</label>
+      </div>
+      <div class="col-md-9">
+        <input type="number" step="0.01" min="0" id="price" [(ngModel)] = "product.price" name="price">
+      </div>
+    </div>
+  <span></span><br>
+    <div class="row">
+      <div class="col-md-3">
+  <label for="quantity"> Quantity</label>
+      </div>
+      <div class="col-md-9">
+  <input type="number" id="quantity" [(ngModel)] = "product.quantity" name="quantity">
+      </div>
+    </div>
+  <span></span><br>
+    <div class="text-center">
+      <button type="submit" class=" btn btn-primary "> Send </button>
+    </div>
+  </div>
+</form>
