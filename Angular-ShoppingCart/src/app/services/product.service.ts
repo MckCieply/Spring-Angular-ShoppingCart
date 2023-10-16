@@ -20,4 +20,8 @@ export class ProductService {
   getProducts(): Observable<any> {
     return this.httpClient.get(`${this.apiUrl}/get`);
   }
+
+  deleteProduct(id: bigint): Observable<any> {
+    return this.httpClient.delete(`${this.apiUrl}/delete/${id}`);
+  }
 }

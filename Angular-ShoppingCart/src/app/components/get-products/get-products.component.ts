@@ -13,4 +13,8 @@ export class GetProductsComponent implements OnInit{
   ngOnInit(): void {
     this.productService.getProducts().subscribe({next: (data) => {this.responseData = data}, error: console.error});
   }
+
+  onDelete(id: bigint) {
+    this.productService.deleteProduct(id).subscribe({next: console.info, error: console.error});
+  }
 }
