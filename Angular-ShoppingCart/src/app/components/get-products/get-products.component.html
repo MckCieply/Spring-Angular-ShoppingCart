@@ -18,9 +18,11 @@
       <button class="btn btn-primary decrement">-</button>
 
       <button class="btn btn-success">Add to Cart</button>
-      <button class="btn btn-warning">Edit</button>
-      <button class="btn btn-danger" (click)="onDelete(product.id)">Delete</button>
+      <button class="btn btn-warning" (click)="onEdit()">Edit</button>
+<!--      Used to be (click)="onDelete(product.id)-->
+      <button class="btn btn-danger" (click)="onTryDelete(product.id)">Delete</button>
 
+      <app-alert-confirm *ngIf="confirmRequired" [action]="action" (cancel)="confirmRequired=false" (confirm)="onConfirmDelete()"></app-alert-confirm>
 
     </div>
     <div class="totalPrice col-md-2">$$$</div>
