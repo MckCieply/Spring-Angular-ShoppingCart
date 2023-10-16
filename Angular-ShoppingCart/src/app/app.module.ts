@@ -6,12 +6,14 @@ import { AddProductsComponent } from './components/add-products/add-products.com
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { GetProductsComponent } from './components/get-products/get-products.component';
+import {AlertConfirmComponent} from "./alerts/confirm/alert-confirm.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     AddProductsComponent,
-    GetProductsComponent
+    GetProductsComponent,
+    AlertConfirmComponent
   ],
   imports: [
     BrowserModule,
