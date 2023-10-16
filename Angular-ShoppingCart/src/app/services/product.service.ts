@@ -16,4 +16,8 @@ export class ProductService {
     return this.httpClient.post(`${this.apiUrl}/add`, productData);
 
   }
+
+  getProducts(): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/get`);
+  }
 }
