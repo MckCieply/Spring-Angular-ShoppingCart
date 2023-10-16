@@ -1,10 +1,29 @@
-<div class="row">
-  <div *ngFor="let product of responseData" class="col-md-4">
-    <table>
-      <tr><td>ID: </td><td> {{product.id}} </td></tr>
-      <tr><td>Name: </td><td> {{product.name}} </td></tr>
-      <tr><td>Price: </td><td> {{product.price}} </td></tr>
-      <tr><td>Quantity: </td><td> {{product.quantity}} </td></tr>
-    </table>
+<div class="container-fluid">
+  <div class="header row">
+    <div class="col-md-1">ID</div>
+    <div class="col-md-2">Name</div>
+    <div class="col-md-1">Quantity</div>
+    <div class="col-md-1">Price</div>
+    <div class="col-md-5"></div>
+    <div class="col-md-2">Total price</div>
+  </div>
+  <div *ngFor="let product of responseData" class="row productRow">
+    <div class="productId col-md-1">{{product.id}}</div>
+    <div class="productName col-md-2">{{product.name}}</div>
+    <div class="productQuantity col-md-1">{{product.quantity}}</div>
+    <div class="productPrice col-md-1" >{{product.price}}<b> $</b></div>
+    <div class="productButtons col-md-5">
+      <button class="btn btn-primary increment">+</button>
+      <input class="addToCart" type="number" disabled>
+      <button class="btn btn-primary decrement">-</button>
+
+      <button class="btn btn-success">Add to Cart</button>
+      <button class="btn btn-warning">Edit</button>
+      <button class="btn btn-danger">Delete</button>
+
+
+    </div>
+    <div class="totalPrice col-md-2">$$$</div>
   </div>
 </div>
+
