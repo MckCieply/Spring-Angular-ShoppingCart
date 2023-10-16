@@ -1,0 +1,8 @@
+<div class="backdrop" (click)="onCancel()"></div>
+<div class="alert-box">
+  <p> Do you want to {{ action }} this product?</p>
+  <div class="alert-buttons">
+      <button class="btn btn-danger" (click)="onConfirm()">Yes</button>
+      <button class="btn btn-primary" (click)="onCancel()">No</button>
+  </div>
+</div>
