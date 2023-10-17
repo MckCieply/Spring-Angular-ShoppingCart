@@ -1,6 +1,7 @@
 import {Component, OnInit, Output} from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {AlertService} from "../../services/alert.service";
+import {Product} from "../../models/product.model";
 
 @Component({
   selector: 'app-get-products',
@@ -10,20 +11,18 @@ import {AlertService} from "../../services/alert.service";
 export class GetProductsComponent implements OnInit{
   responseData: any;
 
-  action="";
   constructor(private productService: ProductService,
               protected alertService: AlertService) {}
   ngOnInit(): void {
     this.productService.getProducts().subscribe({next: (data) => {this.responseData = data}, error: console.error});
   }
 
-  onDelete(id: bigint) {
-    this.alertService.confirmRequired = true;
-    this.action = "delete";
+  onDelete() {
+    this.alertService.confirmRequired = "delete";
 
   }
-  onEdit(){
-
-    this.action = "edit";
+  onEdit(productToEdit: Product){
+    this.alertService.confirmRequired = "edit";
+    this.alertService.productToEdit = productToEdit;
   }
 }

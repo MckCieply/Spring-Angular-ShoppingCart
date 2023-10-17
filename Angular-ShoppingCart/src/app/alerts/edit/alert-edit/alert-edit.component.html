@@ -1,0 +1,42 @@
+<div class="backdrop" (click)="onCancel()"></div>
+<div class="alert-box">
+    <form>
+        <div class="row">
+            <div class="col-md-4">
+                <span>ID: </span>
+            </div>
+            <div class="col-md-8">
+                <span> {{product.id}} </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <span>Name: </span>
+            </div>
+            <div class="col-md-8">
+                <span> {{product.name}} </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="newQuantity">New Quantity</label>
+            </div>
+            <div class="col-md-8">
+                <input type="number" id="newQuantity">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="newPrice">New Price</label>
+            </div>
+            <div class="col-md-8">
+                <input type="number" id="newPrice">
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)="onEdit()">Edit</button>
+        <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+    </form>
+
+</div>
+
