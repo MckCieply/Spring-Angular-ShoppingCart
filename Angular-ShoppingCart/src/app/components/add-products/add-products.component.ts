@@ -15,6 +15,7 @@ export class AddProductsComponent {
 
   onSubmit() {
     this.productService.addProduct(this.product).subscribe({next: console.info, error: console.error});
+    window.location.reload();
   }
 }
 
