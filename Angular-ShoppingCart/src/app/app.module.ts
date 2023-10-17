@@ -7,13 +7,15 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { GetProductsComponent } from './components/get-products/get-products.component';
 import {AlertConfirmComponent} from "./alerts/confirm/alert-confirm.component";
+import { AlertEditComponent } from './alerts/edit/alert-edit/alert-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddProductsComponent,
     GetProductsComponent,
-    AlertConfirmComponent
+    AlertConfirmComponent,
+    AlertEditComponent
   ],
   imports: [
     BrowserModule,

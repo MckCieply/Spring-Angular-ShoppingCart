@@ -1,31 +1,32 @@
 <div class="container-fluid">
-  <div class="header row">
-    <div class="col-md-1">ID</div>
-    <div class="col-md-2">Name</div>
-    <div class="col-md-1">Quantity</div>
-    <div class="col-md-1">Price</div>
-    <div class="col-md-5"></div>
-    <div class="col-md-2">Total price</div>
-  </div>
-  <div *ngFor="let product of responseData" class="row productRow">
-    <div class="productId col-md-1">{{product.id}}</div>
-    <div class="productName col-md-2">{{product.name}}</div>
-    <div class="productQuantity col-md-1">{{product.quantity}}</div>
-    <div class="productPrice col-md-1" >{{product.price}}<b> $</b></div>
-    <div class="productButtons col-md-5">
-      <button class="btn btn-primary increment">+</button>
-      <input class="addToCart" type="number" disabled>
-      <button class="btn btn-primary decrement">-</button>
-
-      <button class="btn btn-success">Add to Cart</button>
-      <button class="btn btn-warning" (click)="onEdit()">Edit</button>
-<!--      Used to be (click)="onDelete(product.id)-->
-      <button class="btn btn-danger" (click)="onTryDelete(product.id)">Delete</button>
-
-      <app-alert-confirm *ngIf="confirmRequired" [action]="action" (cancel)="confirmRequired=false" (confirm)="onConfirmDelete()"></app-alert-confirm>
-
+    <div class="header row">
+        <div class="col-md-1">ID</div>
+        <div class="col-md-2">Name</div>
+        <div class="col-md-1">Quantity</div>
+        <div class="col-md-1">Price</div>
+        <div class="col-md-5"></div>
+        <div class="col-md-2">Total price</div>
     </div>
-    <div class="totalPrice col-md-2">$$$</div>
-  </div>
+    <div *ngFor="let product of responseData" class="row productRow">
+        <div class="productId col-md-1">{{product.id}}</div>
+        <div class="productName col-md-2">{{product.name}}</div>
+        <div class="productQuantity col-md-1">{{product.quantity}}</div>
+        <div class="productPrice col-md-1" >{{product.price}}<b> $</b></div>
+        <div class="productButtons col-md-5">
+            <button class="btn btn-primary increment">+</button>
+            <input class="addToCart" type="number" disabled>
+            <button class="btn btn-primary decrement">-</button>
+
+            <button class="btn btn-success">Add to Cart</button>
+            <button class="btn btn-warning" (click)="onEdit()">Edit</button>
+            <button class="btn btn-danger" (click)="onDelete(product.id)">Delete</button>
+
+            <app-alert-confirm *ngIf="alertService.confirmRequired" [action]="action"
+                               (cancel)="alertService.confirmRequired=false" (confirm)="this.alertService.deleteProduct(product.id)"></app-alert-confirm>
+
+
+        </div>
+        <div class="totalPrice col-md-2">$$$</div>
+    </div>
 </div>
 
