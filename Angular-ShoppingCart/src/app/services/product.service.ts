@@ -27,7 +27,6 @@ export class ProductService {
   }
 
   editProduct(product: Product) {
-      console.log("product service " + product.id + " " + product.name + " " + product.price + " " + product.quantity);
-    //return this.httpClient.put(`${this.apiUrl}/edit${product.id}`, product);
+    return this.httpClient.put(`${this.apiUrl}/update/${product.id}`, product);
   }
 }

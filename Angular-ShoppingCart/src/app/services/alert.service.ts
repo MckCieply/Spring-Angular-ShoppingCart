@@ -19,7 +19,7 @@ export class AlertService {
 
     editProduct(){
       console.log("alert service " + this.productToEdit.name);
-      this.productService.editProduct(this.productToEdit)//.subscribe({next: console.info, error: console.error});
+      this.productService.editProduct(this.productToEdit).subscribe({next: console.info, error: console.error});
         this.confirmRequired = "";
     }
 }
