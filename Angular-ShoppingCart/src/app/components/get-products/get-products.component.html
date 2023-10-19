@@ -27,6 +27,9 @@
             <app-alert-edit *ngIf="alertService.confirmRequired == 'edit' " [product]="this.alertService.productToEdit"
                             (cancel)="alertService.confirmRequired='' "></app-alert-edit>
 
+            <app-alert-confirm *ngIf="alertService.confirmRequired == 'editConfirm' " [action]="this.alertService.confirmRequired"
+                               (cancel)="alertService.confirmRequired='' " (confirm)="this.alertService.editProduct(this.product)" ></app-alert-confirm>
+
         </div>
         <div class="totalPrice col-md-2">$$$</div>
     </div>
