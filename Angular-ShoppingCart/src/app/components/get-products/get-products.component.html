@@ -25,7 +25,7 @@
                                (cancel)="alertService.confirmRequired='' " (confirm)="this.alertService.deleteProduct(product.id)"></app-alert-confirm>
 
             <app-alert-edit *ngIf="alertService.confirmRequired == 'edit' " [product]="this.alertService.productToEdit"
-                            (cancel)="alertService.confirmRequired='' "></app-alert-edit>
+                            (cancel)="alertService.confirmRequired='' " (edit)="alertService.confirmRequired='editConfirm'"></app-alert-edit>
 
             <app-alert-confirm *ngIf="alertService.confirmRequired == 'editConfirm' " [action]="this.alertService.confirmRequired"
                                (cancel)="alertService.confirmRequired='' " (confirm)="this.alertService.editProduct(this.product)" ></app-alert-confirm>
