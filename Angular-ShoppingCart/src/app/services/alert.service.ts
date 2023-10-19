@@ -17,7 +17,9 @@ export class AlertService {
         window.location.reload();
     }
 
-    editProduct(product: Product){
-      console.log("editProduct " + product)
+    editProduct(){
+      console.log("alert service " + this.productToEdit.name);
+      this.productService.editProduct(this.productToEdit)//.subscribe({next: console.info, error: console.error});
+        this.confirmRequired = "";
     }
 }

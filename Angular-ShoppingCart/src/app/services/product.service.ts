@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Product} from "../models/product.model";
 
 
 @Injectable({
@@ -23,5 +24,10 @@ export class ProductService {
 
   deleteProduct(id: bigint): Observable<any> {
     return this.httpClient.delete(`${this.apiUrl}/delete/${id}`);
+  }
+
+  editProduct(product: Product) {
+      console.log("product service " + product.id + " " + product.name + " " + product.price + " " + product.quantity);
+    //return this.httpClient.put(`${this.apiUrl}/edit${product.id}`, product);
   }
 }

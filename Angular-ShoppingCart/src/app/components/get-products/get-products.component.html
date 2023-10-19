@@ -28,7 +28,7 @@
                             (cancel)="alertService.confirmRequired='' " (edit)="alertService.confirmRequired='editConfirm'"></app-alert-edit>
 
             <app-alert-confirm *ngIf="alertService.confirmRequired == 'editConfirm' " [action]="this.alertService.confirmRequired"
-                               (cancel)="alertService.confirmRequired='' " (confirm)="this.alertService.editProduct(this.product)" ></app-alert-confirm>
+                               (cancel)="alertService.confirmRequired='' " (confirm)="this.alertService.editProduct()" ></app-alert-confirm>
 
         </div>
         <div class="totalPrice col-md-2">$$$</div>
