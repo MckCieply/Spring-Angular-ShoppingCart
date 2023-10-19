@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Product} from "../../../models/product.model";
-import {AlertService} from "../../../services/alert.service";
+import {Product} from "../../models/product.model";
+import {AlertService} from "../../services/alert.service";
 
 @Component({
   selector: 'app-alert-edit',
