@@ -10,6 +10,7 @@ import {Product} from "../../models/product.model";
 })
 export class GetProductsComponent implements OnInit{
   responseData: any;
+  amountInCart = 0;
 
   constructor(private productService: ProductService,
               protected alertService: AlertService) {}
@@ -24,5 +25,11 @@ export class GetProductsComponent implements OnInit{
   onEdit(productToEdit: Product){
     this.alertService.confirmRequired = "edit";
     this.alertService.productToEdit = productToEdit;
+  }
+  incrementCart(){
+      this.amountInCart+=1;
+  }
+  decrementCart(){
+      this.amountInCart-=1;
   }
 }

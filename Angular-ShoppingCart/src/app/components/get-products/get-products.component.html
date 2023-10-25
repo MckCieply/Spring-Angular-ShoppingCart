@@ -13,9 +13,9 @@
         <div class="productQuantity col-md-1">{{product.quantity}}</div>
         <div class="productPrice col-md-1" >{{product.price}}<b> $</b></div>
         <div class="productButtons col-md-5">
-            <button class="btn btn-primary increment">+</button>
-            <input class="addToCart" type="number" disabled>
-            <button class="btn btn-primary decrement">-</button>
+            <button class="btn btn-primary increment" (click) = incrementCart()>+</button>
+            <input class="addToCart" type="number" [(ngModel)]="amountInCart" disabled>
+            <button class="btn btn-primary decrement" (click) = decrementCart()>-</button>
 
             <button class="btn btn-success">Add to Cart</button>
             <button class="btn btn-warning" (click)="onEdit(product)">Edit</button>
